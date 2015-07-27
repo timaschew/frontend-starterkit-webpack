@@ -31,7 +31,9 @@ module.exports =
       }
       {
         test: /\.scss$/,
-        loader: "style-loader!sass-loader?outputStyle=expanded&includePaths[]=./bower_components/foundation/scss/"
+        loader: "style-loader!css-loader!sass?outputStyle=expanded&" +
+          "includePaths[]=" +
+            (path.resolve(__dirname, "./bower_components/foundation/scss/"))
       }
       {
         # required to write 'require('./style.css')'
